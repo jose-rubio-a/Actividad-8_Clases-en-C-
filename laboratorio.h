@@ -13,6 +13,12 @@ class Laboratorio{
 
     void agregarFinal(const Computadora &c);
     void mostrar();
+
+    friend Laboratorio& operator << (Laboratorio &l, Computadora &c){
+        l.agregarFinal(c);
+
+        return l;
+    }
 };
 
 #endif
