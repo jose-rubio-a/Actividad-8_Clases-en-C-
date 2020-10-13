@@ -11,10 +11,7 @@ int main(){
     c03.setTamanoRam(4);
     c03.setProcesador("AMD");
     c03.setNombreEquipo("Equipo 3");
-    c04.setSistemaOperativo("Windows");
-    c04.setTamanoRam(8);
-    c04.setProcesador("Intel");
-    c04.setNombreEquipo("Equipo 4");
+    cin >> c04;
     
     Laboratorio l;
 
