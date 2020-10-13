@@ -2,7 +2,7 @@
 #define COMPUTADORA_H
 
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 class Computadora{
@@ -24,6 +24,17 @@ class Computadora{
         int getTamanoRam();
         string getProcesador();
         string getNombreEquipo();
+
+        friend ostream& operator <<(ostream &out, const Computadora &c){
+            out << left;
+            out << setw(16) << c.nombreEquipo;
+            out << setw(20) << c.sistemaOperativo;
+            out << setw(6) << c.tamanoRam;
+            out << setw(16) << c.procesador;
+            out << endl;
+
+            return out;
+        }
 };
 
 #endif
