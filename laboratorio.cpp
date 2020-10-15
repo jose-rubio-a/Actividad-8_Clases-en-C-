@@ -51,7 +51,6 @@ void Laboratorio::respaldar_tabla(){
     }
 
 void Laboratorio::respaldar(){
-        int i;
         ofstream archivo("computadoras.txt");
         if(archivo.is_open()){
             for(size_t i = 0; i < cont; i++){
@@ -64,3 +63,29 @@ void Laboratorio::respaldar(){
         }
         archivo.close();
     }
+
+void Laboratorio::recuperar(){
+    ifstream archivo("computadoras.txt");
+    if(archivo.is_open()){
+        string temp;
+        int ram;
+        Computadora c;
+        while (true){
+            getline(archivo,temp);
+            if (archivo.eof()){
+                break;
+            }
+            c.setNombreEquipo(temp);
+            getline(archivo,temp);
+            c.setSistemaOperativo(temp);
+            getline(archivo,temp);
+            ram = stoi(temp);
+            c.setTamanoRam(ram);
+            getline(archivo,temp);
+            c.setProcesador(temp);
+
+            agregarFinal(c);
+        }
+        archivo.close();
+    }
+}

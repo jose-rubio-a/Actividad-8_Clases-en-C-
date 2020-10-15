@@ -15,6 +15,7 @@ class Laboratorio{
     void mostrar();
     void respaldar_tabla();
     void respaldar();
+    void recuperar();
 
     friend Laboratorio& operator << (Laboratorio &l, Computadora &c){
         l.agregarFinal(c);
