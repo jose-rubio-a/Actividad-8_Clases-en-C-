@@ -24,6 +24,8 @@ int main(){
 
     //cout << c01;
     l.mostrar();
+    l.respaldar_tabla();
+    l.respaldar();
 
     return 0;
 }
